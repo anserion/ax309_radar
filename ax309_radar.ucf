@@ -1,0 +1,125 @@
+NET "CLK50_ucf" LOC = T8 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+#magic
+PIN "clocking_chip/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "clocking_chip/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "clocking_chip/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#PIN "clocking_chip/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#PIN "clocking_chip/clkout5_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#PIN "clocking_chip/clkout6_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+########IO_1 Pin define####################
+NET trig1              LOC = A4 | IOSTANDARD = "LVCMOS33"; ##io1_3
+NET trig2              LOC = B5 | IOSTANDARD = "LVCMOS33"; ##io1_4
+NET echo1              LOC = A5 | IOSTANDARD = "LVCMOS33"; ##io1_5
+NET echo2              LOC = B6 | IOSTANDARD = "LVCMOS33"; ##io1_6
+NET step_motor_pins<0> LOC = A6 | IOSTANDARD = "LVCMOS33"; ##io1_7
+NET step_motor_pins<1> LOC = A7 | IOSTANDARD = "LVCMOS33"; ##io1_8
+NET step_motor_pins<2> LOC = B8 | IOSTANDARD = "LVCMOS33"; ##io1_9
+NET step_motor_pins<3> LOC = A8 | IOSTANDARD = "LVCMOS33"; ##io1_10
+#NET io1_11           LOC = C8 | IOSTANDARD = "LVCMOS33"; ##io1_11
+#NET io1_12           LOC = A9 | IOSTANDARD = "LVCMOS33"; ##io1_12
+
+##  Buzzer output
+#NET buzzer            LOC = J11 | IOSTANDARD = "LVCMOS33";
+########LED Pin define#####################
+NET led<0>            LOC = P4 | IOSTANDARD = "LVCMOS33";       ## LED1
+NET led<1>            LOC = N5 | IOSTANDARD = "LVCMOS33";       ## LED2
+NET led<2>            LOC = P5 | IOSTANDARD = "LVCMOS33";       ## LED3
+NET led<3>            LOC = M6 | IOSTANDARD = "LVCMOS33";       ## LED4
+########KEY Pin define#####################
+NET key<0>            LOC = C3 | IOSTANDARD = "LVCMOS33";       ## KEY1
+NET key<1>            LOC = D3 | IOSTANDARD = "LVCMOS33";       ## KEY2
+NET key<2>            LOC = E4 | IOSTANDARD = "LVCMOS33";       ## KEY3
+NET key<3>            LOC = E3 | IOSTANDARD = "LVCMOS33";       ## KEY4
+
+########smg interface Pin define##################### 
+NET SMG_seg<0>       LOC = C7 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<1>       LOC = E6 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<2>       LOC = C5 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<3>       LOC = F7 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<4>       LOC = D6 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<5>       LOC = E7 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<6>       LOC = D5 | IOSTANDARD = "LVCMOS33";
+NET SMG_seg<7>       LOC = C6 | IOSTANDARD = "LVCMOS33";
+
+NET SMG_dig<5>       LOC = D9 | IOSTANDARD = "LVCMOS33";
+NET SMG_dig<4>       LOC = E10 | IOSTANDARD = "LVCMOS33";
+NET SMG_dig<3>       LOC = F10 | IOSTANDARD = "LVCMOS33";
+NET SMG_dig<2>       LOC = F9 | IOSTANDARD = "LVCMOS33";
+NET SMG_dig<1>       LOC = E8 | IOSTANDARD = "LVCMOS33";
+NET SMG_dig<0>       LOC = D8 | IOSTANDARD = "LVCMOS33";
+
+# LCD
+NET "lcd_blue<0>"       LOC = R9  | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<1>"       LOC = T12  | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<2>"       LOC = L8 | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<3>"       LOC = T9 | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<4>"       LOC = R7 | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<5>"       LOC = T7 | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<6>"       LOC = T5 | IOSTANDARD="LVCMOS33";
+NET "lcd_blue<7>"       LOC = T6 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<0>"      LOC = R16 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<1>"      LOC = P15 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<2>"      LOC = T15 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<3>"      LOC = R15 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<4>"      LOC = T14 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<5>"      LOC = R14 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<6>"      LOC = R12 | IOSTANDARD="LVCMOS33";
+NET "lcd_green<7>"      LOC = T13 | IOSTANDARD="LVCMOS33";
+NET "lcd_red<0>"        LOC = K16  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<1>"        LOC = J16  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<2>"        LOC = L16  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<3>"        LOC = K15  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<4>"        LOC = M15  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<5>"        LOC = M16  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<6>"        LOC = P16  | IOSTANDARD="LVCMOS33";
+NET "lcd_red<7>"        LOC = N16  | IOSTANDARD="LVCMOS33";
+NET "lcd_hsync"         LOC = R5  | IOSTANDARD="LVCMOS33";
+NET "lcd_vsync"         LOC = R1  | IOSTANDARD="LVCMOS33";
+NET "lcd_dclk"          LOC = T4  | IOSTANDARD="LVCMOS33";
+
+#SDRAM
+NET "Sdram_CLK_ucf"    LOC =  H4 | IOSTANDARD = "LVCMOS33";        ## SDRAM CLOCK
+NET "Sdram_CKE_ucf"    LOC =  H2 | IOSTANDARD = "LVCMOS33";        ## SDRAM CKE
+NET "Sdram_NCS_ucf"    LOC =  G1 | IOSTANDARD = "LVCMOS33";        ## SDRAM CS
+NET "Sdram_NWE_ucf"    LOC =  E1 | IOSTANDARD = "LVCMOS33";        ## SDRAM NWE
+NET "Sdram_NCAS_ucf"   LOC =  F2 | IOSTANDARD = "LVCMOS33";        ## SDRAM CAS
+NET "Sdram_NRAS_ucf"   LOC =  F1 | IOSTANDARD = "LVCMOS33";        ## SDRAM RAS
+
+NET "Sdram_DQM_ucf<0>" LOC =  E2 | IOSTANDARD = "LVCMOS33";        ## SDRAM DQM0
+NET "Sdram_DQM_ucf<1>" LOC =  H1 | IOSTANDARD = "LVCMOS33";        ## SDRAM DQM1
+
+NET "Sdram_BA_ucf<0>"  LOC =  G6 | IOSTANDARD = "LVCMOS33";        ## SDRAM BA0
+NET "Sdram_BA_ucf<1>"  LOC =  J6 | IOSTANDARD = "LVCMOS33";        ## SDRAM BA1
+
+NET "Sdram_A_ucf<0>"   LOC =  J3 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR0
+NET "Sdram_A_ucf<1>"   LOC =  J4 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR1
+NET "Sdram_A_ucf<2>"   LOC =  K3 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR2
+NET "Sdram_A_ucf<3>"   LOC =  K5 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR3
+NET "Sdram_A_ucf<4>"   LOC =  P1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR4
+NET "Sdram_A_ucf<5>"   LOC =  N1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR5
+NET "Sdram_A_ucf<6>"   LOC =  M2 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR6
+NET "Sdram_A_ucf<7>"   LOC =  M1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR7
+NET "Sdram_A_ucf<8>"   LOC =  L1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR8
+NET "Sdram_A_ucf<9>"   LOC =  K2 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR9
+NET "Sdram_A_ucf<10>"  LOC =  K6 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR10
+NET "Sdram_A_ucf<11>"  LOC =  K1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR11
+NET "Sdram_A_ucf<12>"  LOC =  J1 | IOSTANDARD = "LVCMOS33";        ## SDRAM ADDR12
+
+NET "Sdram_DB_ucf<0>"  LOC = A3 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA0
+NET "Sdram_DB_ucf<1>"  LOC = B3 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA1
+NET "Sdram_DB_ucf<2>"  LOC = A2 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA2
+NET "Sdram_DB_ucf<3>"  LOC = B2 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA3
+NET "Sdram_DB_ucf<4>"  LOC = B1 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA4
+NET "Sdram_DB_ucf<5>"  LOC = C2 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA5
+NET "Sdram_DB_ucf<6>"  LOC = C1 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA6
+NET "Sdram_DB_ucf<7>"  LOC = D1 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA7
+NET "Sdram_DB_ucf<8>"  LOC = H5 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA8
+NET "Sdram_DB_ucf<9>"  LOC = G5 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA9
+NET "Sdram_DB_ucf<10>" LOC = H3 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA10
+NET "Sdram_DB_ucf<11>" LOC = F6 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA11
+NET "Sdram_DB_ucf<12>" LOC = G3 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA12
+NET "Sdram_DB_ucf<13>" LOC = F5 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA13
+NET "Sdram_DB_ucf<14>" LOC = F3 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA14
+NET "Sdram_DB_ucf<15>" LOC = F4 | IOSTANDARD = "LVCMOS33";        ## SDRAM DATA15
